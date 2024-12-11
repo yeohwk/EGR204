@@ -1,0 +1,58 @@
+C51 COMPILER V9.59.0.0   FUNC                                                              10/28/2024 08:14:21 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE FUNC
+OBJECT MODULE PLACED IN Func.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\c51.exe Func.c DB OE BR INCDIR(C:\SiLabs\MCU\Inc)
+
+line level    source
+
+   1          #include <f200.h>
+   2          
+   3          //----- Delay2 Subroutine ------- 
+   4          void delay2(unsigned int duration)
+   5          {
+   6   1              while ((duration--)!=0);
+   7   1      }
+   8          
+   9          void setSystem()
+  10          /*-----------------------------------------------------------------------
+  11                  Diasable watchdog and switch off internal to external oscillator.
+  12                  Configure system input/output ports
+  13          -------------------------------------------------------------------------*/
+  14          {
+  15   1      
+  16   1              WDTCN = 0xde;                   // Disable Watchdog
+  17   1              WDTCN = 0xad;
+  18   1      
+  19   1              OSCXCN = 0x67;
+  20   1              delay2 (60000);                 // Wait for oscillation to stable.
+  21   1              
+  22   1              while((OSCXCN & 0x80)==0);      // Wait for external Osc to stable.
+  23   1              OSCICN|= 0x08;
+  24   1              
+  25   1              PRT0CF |= 0x40;         // Configure speaker output port P0.6 as push-pull
+  26   1              PRT2CF |= 0xFF;         // Configure port as push-pull
+  27   1              PRT1CF |= 0xFF;         // Configure port a as push-pull
+  28   1              PRT3CF |= 0xe0;         // Configure P35 to P37 as push-pull
+  29   1      
+  30   1              PRT0MX |= 0x0d;         // Enable Serial IO Port & Interrupts
+  31   1      
+  32   1              P0 |= 0x3c;             // Set P0.2 to P0.5 as input.
+  33   1              P3 |= 0x1f;             // Set P30 to P34 as input.     
+  34   1              P2 = 0;
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     61    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

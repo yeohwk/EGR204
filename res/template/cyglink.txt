@@ -1,0 +1,2 @@
+"C:\Users\admin\Desktop\EGR204_template\Func.obj",
+"C:\Users\admin\Desktop\EGR204_template\main.obj"  TO "C:\Users\admin\Desktop\EGR204_template\template" RS(256) PL(68) PW(78) 

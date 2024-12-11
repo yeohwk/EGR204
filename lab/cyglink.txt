@@ -1,0 +1,2 @@
+"C:\EGR204\lab\lab1_ex1.obj",
+"C:\EGR204\res\Func.obj"  TO "C:\EGR204\lab\lab1" RS(256) PL(68) PW(78) 

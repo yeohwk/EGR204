@@ -1,0 +1,24 @@
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0 - SN: Eval Version
+COPYRIGHT ARM Germany GmbH 1987 - 2017
+"C:\Users\admin\Desktop\EGR204_template\Func.obj",
+"C:\Users\admin\Desktop\EGR204_template\main.obj"  TO "C:\Users\admin\Desktop\EGR204_template\template" RS(256) PL(68) PW(78) 
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DISPLAY?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GETCHAR?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_KEYSCAN?MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0102H BYTE (12%) *
+******************************************************************************
+
+>> 
+>> 
+>> 
+Program Size: data=20.0 xdata=0 code=425
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
